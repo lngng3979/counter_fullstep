@@ -1,0 +1,116 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: _109_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _115_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock source latency
+     8    0.022195    0.000000    0.000000    0.000000 ^ clk (in)
+                                                         clk (net)
+                      0.000154    0.000077    0.000077 ^ _109_/CLK (sky130_fd_sc_hd__dfrtp_2)
+     4    0.016476    0.072378    0.410215    0.410292 v _109_/Q (sky130_fd_sc_hd__dfrtp_2)
+                                                         count[1] (net)
+                      0.072378    0.000033    0.410325 v _062_/A (sky130_fd_sc_hd__xor2_2)
+     3    0.009209    0.063999    0.192195    0.602520 v _062_/X (sky130_fd_sc_hd__xor2_2)
+                                                         _015_ (net)
+                      0.063999    0.000003    0.602523 v _067_/A2 (sky130_fd_sc_hd__o21a_2)
+     3    0.011029    0.054170    0.222218    0.824742 v _067_/X (sky130_fd_sc_hd__o21a_2)
+                                                         _019_ (net)
+                      0.054170    0.000042    0.824784 v _080_/A1 (sky130_fd_sc_hd__o31ai_2)
+     4    0.012373    0.327380    0.347946    1.172729 ^ _080_/Y (sky130_fd_sc_hd__o31ai_2)
+                                                         _030_ (net)
+                      0.327380    0.000051    1.172780 ^ _098_/A1 (sky130_fd_sc_hd__a31o_2)
+     3    0.012070    0.085321    0.249015    1.421795 ^ _098_/X (sky130_fd_sc_hd__a31o_2)
+                                                         _046_ (net)
+                      0.085321    0.000057    1.421852 ^ _103_/A2 (sky130_fd_sc_hd__a21oi_2)
+     1    0.009138    0.062845    0.075432    1.497283 v _103_/Y (sky130_fd_sc_hd__a21oi_2)
+                                                         _050_ (net)
+                      0.062845    0.000031    1.497315 v _105_/A (sky130_fd_sc_hd__xnor2_2)
+     1    0.002748    0.046879    0.130799    1.628113 v _105_/Y (sky130_fd_sc_hd__xnor2_2)
+                                                         _052_ (net)
+                      0.046879    0.000008    1.628121 v _107_/A2 (sky130_fd_sc_hd__a21o_2)
+     1    0.002579    0.033531    0.202082    1.830203 v _107_/X (sky130_fd_sc_hd__a21o_2)
+                                                         _007_ (net)
+                      0.033531    0.000006    1.830209 v _115_/D (sky130_fd_sc_hd__dfrtp_2)
+                                              1.830209   data arrival time
+
+                                  4.300000    4.300000   clock clk (rise edge)
+                                  0.000000    4.300000   clock source latency
+     8    0.022195    0.000000    0.000000    4.300000 ^ clk (in)
+                                                         clk (net)
+                      0.000121    0.000060    4.300060 ^ _115_/CLK (sky130_fd_sc_hd__dfrtp_2)
+                                  0.000000    4.300060   clock reconvergence pessimism
+                                 -0.120830    4.179231   library setup time
+                                              4.179231   data required time
+---------------------------------------------------------------------------------------------
+                                              4.179231   data required time
+                                             -1.830209   data arrival time
+---------------------------------------------------------------------------------------------
+                                              2.349021   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_1v80: 0
+max fanout violation count 0
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_1v80: 0
+max cap violation count 0
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_1v80: 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 12 input ports missing set_input_delay.
+  data[0]
+  data[1]
+  data[2]
+  data[3]
+  data[4]
+  data[5]
+  data[6]
+  data[7]
+  enable
+  preload
+  resetn
+  up_down
+Warning: There are 8 unconstrained endpoints.
+  count[0]
+  count[1]
+  count[2]
+  count[3]
+  count[4]
+  count[5]
+  count[6]
+  count[7]
